@@ -1,16 +1,4 @@
 // Barres "color" sous les onglets
-     let change0 = document.getElementById('b0');
-     let bar0 = document.getElementById('a0');
-     change0.addEventListener('mouseover',changeback0);
-     change0.addEventListener('mouseout',resetback0);
-
-     function changeback0(){
-        bar0.style.backgroundColor = 'rgb(246, 18, 18)';
-     }
-     function resetback0(){
-        bar0.style.backgroundColor ='';
-     }
-
      let change1 = document.getElementById('b1');
      let bar1 = document.getElementById('a1');
      change1.addEventListener('mouseover',changeback1);
@@ -53,7 +41,7 @@
      change4.addEventListener('mouseout',resetback4);
  
      function changeback4(){
-         bar4.style.backgroundColor = 'rgb(241, 136, 16)';
+         bar4.style.backgroundColor = 'rgb(241, 16, 16)';
      }
       function resetback4(){
          bar4.style.backgroundColor ='';

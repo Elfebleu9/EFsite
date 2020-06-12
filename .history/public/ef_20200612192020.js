@@ -5,10 +5,10 @@
      change0.addEventListener('mouseout',resetback0);
 
      function changeback0(){
-        bar0.style.backgroundColor = 'rgb(246, 18, 18)';
+        bar0.style.backgroundColor = 'rgb((246, 18, 18)';
      }
      function resetback0(){
-        bar0.style.backgroundColor ='';
+        bar0.backgroundColor ='';
      }
 
      let change1 = document.getElementById('b1');

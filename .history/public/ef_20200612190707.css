@@ -42,7 +42,7 @@ nav a
     text-decoration: none;
     color: black;
 }
-#b0 
+#b0 a
 {
     text-decoration: none;
     color: black;
@@ -76,7 +76,7 @@ nav a
 
 #b0:hover
 {
-    color:rgb(246, 18, 18);
+    color:rgb(246, 147, 18);
     cursor: pointer;
 }
 #b1:hover
@@ -97,7 +97,7 @@ nav a
 }
 #b4:hover
 {
-    color:rgb(241, 136, 16);
+    color:rgb(241, 16, 16);
     cursor: pointer;
 }
 /* boutons*/
