@@ -4,9 +4,9 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <meta http-equiv="X-UA-Compatible" content="ie=chrome">
+        <meta http-equiv="X-UA-Compatible" content="cr=chrome">
         <link rel="stylesheet" type="text/css" href="ef.css">
-        <script src="ef1.js" async></script>
+        <script src="ef.js" async></script>
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
         {% block javascripts %}{% endblock %}
@@ -17,7 +17,10 @@
     
     <body>
         <header>
-            
+            <a id='b0' href={{path('home')}} target="">
+                <div id="m0">Accueil</div>
+                <div id='a0'></div>
+            </a>
             <div id='vid'></div>
             <img id="logo" src="Img/logo_EF2.png" alt="logo">
             <nav id="menu">
@@ -65,15 +68,15 @@
             </div>
             <div id='reseaux'>
                 <h4>Réseaux sociaux  :</h4>
-               <div id='logo_res'>
+                <div id='logo_res'>
 
                     <a id ='fb' href='https://www.facebook.com/Elvys-131033153620380' target='_blank'><img src='Img/icon_fb.jpg' alt='iconfb'/></a>
                     <div id='vid1'></div>
-                    <a id ='tw' href='https://twitter.com/Elvys_Futur' target='_blank'><img src='Img/icon_tw.jpg' alt='icontw'/></a>
+                    <a id ='tw' href='' target=''><img src='Img/icon_tw.jpg' alt='icontw'/></a>
                     <div id='vid1'></div>
-                    <a id ='in' href='https://www.instagram.com/elvysfutur' target='_blank'><img src='Img/icon_in.jpg' alt='iconin'/></a>
+                    <a id ='in' href='' target=''><img src='Img/icon_in.jpg' alt='iconin'/></a>
                     <div id='vid1'></div>
-                    <a id ='yt' href='https://www.youtube.com/user/elvys972' target='_blank'><img src='Img/icon_yt.jpg' alt='iconyt'/></a>
+                    <a id ='yt' href='' target=''><img src='Img/icon_yt.jpg' alt='iconyt'/></a>
                 </div>
                 <p id='cop'>©2020 Elvys Futur Site officiel, tous droits réservés </br> Réalisé par Elfebleu9</p>
                 
