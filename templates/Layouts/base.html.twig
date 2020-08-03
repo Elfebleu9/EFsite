@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta http-equiv="X-UA-Compatible" content="cr=chrome">
+        <link rel="stylesheet" type="text/css" href="ef.css">
+        <script src="ef.js" async></script>
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+        {% block javascripts %}{% endblock %}
+    </head>
+   
+    
+        
+    
+    <body>
+        <header>
+            <a id='b0' href={{path('app_home')}} target="">
+                <div id="m0">Accueil</div>
+                <div id='a0'></div>
+            </a>
+            <div id='vid'></div>
+            <img id="logo" src="Img/logo_EF2.png" alt="logo">
+            <nav id="menu">
+                <div id="mn">
+                    <a id='b1' href={{path('app_pages_actus')}} target="">
+                        <div id="m1">Actualité</div>
+                        <div id='a1'></div>
+                    </a>
+                    <a id='b2' href={{path('app_pages_albums')}} target="">
+                        <div id="m2" >Albums</div>
+                        <div id='a2'></div>
+                    </a>
+                    <a id='b3' href={{path('app_pages_concerts')}} target="">
+                        <div id="m3">Concerts</div>
+                        <div id='a3'></div>
+                    </a>
+                    <a id='b4' href={{path('app_pages_shop')}} target="">
+                        <div id="m4">Accessoires</div>
+                        <div id='a4'></div>
+                    </a>
+                </div>
+            </nav>
+            <div id="but">
+                <a id="button1" id="con"  href='*' target="">Je me connecte</a>
+                <a id="button2" id="ins" href='*' target="">Je m'inscris</a>
+            </div>
+            
+        </header>
+        {% block body %}
+        {% endblock %}
+        <footer>
+            <div id='infos'>
+                <h4>Bon à savoir  :</h4>
+                <a  class='slig' href='http://wikipedia.org' target=''>Mentions légales</a>
+                <a  class='slig' href='http://wikipedia.org' target=''>Politiques de confidentialité</a>
+            </div>
+            <div id='plan'>
+                <h4 >Plan du site  :</h4>
+                    <ul>
+                        <li><a class='slig' href={{path('app_pages_actus')}} target='' >Actualités</a></li>
+                        <li><a class='slig' href={{path('app_pages_albums')}} target='' >Albums</a></li>
+                        <li><a class='slig' href={{path('app_pages_concerts')}} target='' >Concerts</a></li>
+                        <li><a class='slig' href={{path('app_pages_shop')}} target='' >Accessoires</a></li>
+                    </ul>
+            </div>
+            <div id='reseaux'>
+                <h4>Réseaux sociaux  :</h4>
+                <div id='logo_res'>
+
+                    <a id ='fb' href='https://www.facebook.com/Elvys-131033153620380' target='_blank'><img src='Img/icon_fb.jpg' alt='iconfb'/></a>
+                    <div id='vid1'></div>
+                    <a id ='tw' href='https://twitter.com/Elvys_Futur' target='_blank'><img src='Img/icon_tw.jpg' alt='icontw'/></a>
+                    <div id='vid1'></div>
+                    <a id ='in' href='https://www.instagram.com/elvysfutur' target='_blank'><img src='Img/icon_in.jpg' alt='iconin'/></a>
+                    <div id='vid1'></div>
+                    <a id ='yt' href='https://www.youtube.com/user/elvys972' target='_blank'><img src='Img/icon_yt.jpg' alt='iconyt'/></a>
+                </div>
+                <p id='cop'>©2020 Elvys Futur Site officiel, tous droits réservés </br> Réalisé par Elfebleu9</p>
+                
+            </div>
+        </footer>          
+    </body>
+        
+   
+    
+</html>
