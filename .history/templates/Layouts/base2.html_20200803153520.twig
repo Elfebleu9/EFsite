@@ -4,23 +4,22 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <meta http-equiv="X-UA-Compatible" content="cr=chrome">
-        
-        
+        <meta http-equiv="X-UA-Compatible" content="ie=chrome">
+        <link rel="stylesheet" type="text/css" href="ef.css">
+        <script src="ef1.js" async></script>
         <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}
-            <link rel="stylesheet" type="text/css" href="ef.css">
-        {% endblock %}
-        {% block javascripts %}
-            <script src="ef.js" async></script>
-        {% endblock %}
+        {% block stylesheets %}{% endblock %}
+        {% block javascripts %}{% endblock %}
     </head>  
     <body>
-        {{include('layouts/partials/_nav.html.twig')}}
+        {{include('layouts/partials/_nav2.html.twig')}}
         <main role="main" class="container">
             {% block body %}
             {% endblock %}
         </main>
-        {{include('layouts/partials/_footer.html.twig')}}
-    </body>   
+       {{include('layouts/partials/_footer.html.twig')}}         
+    </body>
+        
+   
+    
 </html>

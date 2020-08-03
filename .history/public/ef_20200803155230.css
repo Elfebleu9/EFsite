@@ -85,7 +85,8 @@ nav a
 #a1,#a2,#a3,#a4
 {
     width: 90%;
-    height:5px;  
+    height:5px; 
+    border: blue 1px solid;  
 }
 
 #b0:hover
