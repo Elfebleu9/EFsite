@@ -1,0 +1,693 @@
+body
+{
+    margin:0;
+    padding:0; 
+   
+    background:#fef8e1;
+}
+.container-fluid
+{
+    margin-top: 50px;
+    flex-direction: column;
+    border:blue 2px solid;
+}
+/* en-tête */
+header
+{
+    display: flex;
+    justify-content: space-around;
+ 
+    position:fixed;
+    z-index: 2;
+    width:100%;
+    height:150px;   
+    background-image: linear-gradient(90deg,rgb(130, 6, 179),rgb(171, 131, 224), rgb(235, 116, 235),rgb(218, 101, 33),#ebb85a,#e2cf65,#fef8c1,#fef8e1,#fef8e1,#fef8e1,#fef8e1);   
+}
+
+/*menu header*/
+nav
+{
+    padding:0;
+    margin:0;
+    width:45%;
+    height:150px;  
+}
+#mn
+{   
+    display: flex;
+    justify-content: space-around;
+    width:100%;
+    height:150px; 
+}
+nav a
+{
+    /* text-decoration: none; */
+    color: black;
+}
+nav a:hover 
+{
+    text-decoration: none; 
+}
+#b0 
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width:10%;
+    height:150px;   
+    font-size: 20px;
+    font-weight: bold; 
+    text-decoration: none;
+    color: black;
+}
+#b1,#b2,#b3,#b4
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width:20%;
+    height:150px;   
+    font-size: 20px;
+    font-weight: bold; 
+}
+
+#m0,#m1,#m2,#m3,#m4
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height:145px;
+}
+
+#a0
+{
+    width: 70%;
+    height:5px;
+    /* border: 2px solid red;  */
+}
+#a1,#a2,#a3,#a4
+{
+    width: 90%;
+    height:5px;  
+}
+
+#b0:hover
+{
+    color:rgb(246, 18, 18);
+    cursor: pointer;
+}
+#b1:hover
+{
+    color:rgb(246, 246, 18);
+    cursor: pointer;
+}
+
+#b2:hover
+{
+    color:rgb(61, 41, 243);
+    cursor: pointer;
+}
+#b3:hover
+{
+    color:rgb(12, 173, 25);
+    cursor: pointer;
+}
+#b4:hover
+{
+    color:rgb(241, 136, 16);
+    cursor: pointer;
+}
+/* boutons*/
+#button1, #button2
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45%;
+    height: 50px;
+    margin-top: 50px;
+    background-color: violet;
+    border-radius: 50px;
+    text-align: center;
+    transform: scale(1);
+    transition: transform 100ms;
+}
+#button1:hover
+{
+    color:rgb(250, 40, 3);
+    background-color: rgb(59, 252, 53);
+    cursor: pointer;
+    transform: scale(1.1);
+    font-weight:bold;
+}
+#button2:hover
+{
+    color:rgb(250, 40, 3);
+    background-color: rgb(21, 230, 245);
+    cursor: pointer;
+    transform: scale(1.1);
+    font-weight:bold;
+}
+#but
+{
+    display: flex;
+    justify-content: space-around;
+    width:20%;
+    height:150px; 
+}
+#but a
+{
+    text-decoration: none;
+    color: black;
+}
+#but a:hover
+{
+    color:rgb(241, 106, 16);
+}
+/* corps de page */
+#back
+{  
+    width:100%;
+    height:830px;
+    margin-top: 50px;
+    background:url("Img/concert_EF.jpg") no-repeat center;
+    background-size: cover;
+}
+#back2
+{
+    display:none;   
+}
+h1
+{
+    margin-top: 200px;
+    display: inline-block;
+    width:100%;
+    text-align:center;
+    /* border: 5px solid blue; */
+}
+/* pied de page */
+footer
+{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    width: 100%;
+    height: 200px;
+    background-image: linear-gradient(270deg,rgb(130, 6, 179),rgb(171, 131, 224), rgb(235, 116, 235),rgb(218, 101, 33),#ebb85a,#e2cf65,#fef8c1,#fef8e1,#fef8e1,#fef8e1,#fef8e1); 
+}
+footer h4 
+{
+    margin-top: 5px;
+    text-decoration: underline;
+    width: 100%;
+}
+footer ul
+{
+    margin:0;
+    padding: 0;
+    list-style-type: none;
+    width: 60%;
+}
+footer a
+{
+    text-decoration: none;
+    color: black;
+}
+/* bloc infos */
+#infos
+{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 30%;
+}
+/* bloc plan */
+#plan
+{ 
+    display: flex;
+    align-content: space-around; 
+    align-items: center;
+    flex-direction: column;
+    width: 30%;
+}
+.slig:hover
+{
+    text-decoration: underline;
+}
+/* bloc réseaux */
+#reseaux
+{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 30%;
+}
+#logo_res
+{
+    display: flex;
+    justify-content: flex-start;
+    height: 21px;
+}
+#logo_res a img
+{
+    border-radius: 40px;
+}
+#fb, #tw, #in, #yt
+{
+    width: 20px;
+    height: 20px;
+    transform: scale(1);
+}
+#fb:hover, #tw:hover, #in:hover, #yt:hover
+{
+    width: 20px;
+    height: 20px;
+    border-radius: 50px;
+    transform: scale(1.5);
+}
+#cop
+{
+    font-weight: bold;
+}
+
+/* espaces */
+#vid
+{
+    width:5%;
+    height:150px;
+}
+#vid1
+{
+    width:10%;
+    height:20px;
+}
+#vid3
+{
+    width:100%;
+    height:100px;
+}
+
+
+
+/* blocs extraits musicaux*/
+#blm
+{
+    margin-top: 100px;
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 948px;
+}
+#tbl
+{
+    width: 100%; 
+    margin-top: 200px;
+}
+#morc
+{
+    width: 100%;
+    height: 400px;
+    margin-top: 70px;
+    display: flex;
+    justify-content: space-around;
+}
+#tbl1
+{
+    width: 20%;
+    background-color:#fef8e1;
+    color:black;
+    border-radius: 15px;
+    text-align: center;   
+    animation: background 3000ms 200ms infinite;  
+}
+@keyframes background {
+    0%,100% {
+
+       border: rgb(53, 189, 235) 2px solid;
+   }
+    25% {
+         
+        border: orange 2px solid;
+
+    }
+    50% {
+        
+        border: rgb(44, 238, 44) 2px solid;
+   }
+    75% {
+         
+        border: orange 2px solid;
+    }
+}
+
+#vid2
+{
+    width:80%;   
+}
+#bl1
+{
+    width: 20%;
+    height: 200px;
+    border-radius: 25px;
+    background-image:url(Img/mixtape_EF.jpg);
+    background-size: cover;
+    border: 2.5px solid #d46bee;
+    cursor: pointer;   
+}
+#bl2
+{  
+    width: 20%;
+    height: 200px;
+    border-radius: 25px;
+    background-image:url(Img/EF1.jpg);
+    background-size: cover;
+    border: 2.5px solid #a357b6;
+    cursor: pointer;
+}
+#bl3
+{
+    width: 20%;
+    height: 200px;
+    border-radius: 25px;
+    background-image:url(Img/EF4.jpg);
+    background-size: cover;
+    border: 2.5px solid #741e8a;
+    cursor: pointer;
+}
+#bl4
+{
+    width: 20%;
+    height: 200px;
+    border-radius: 25px;
+    /* background-image:url(Img/EF3.jpg);
+    background-size: cover; */
+    border: 2.5px solid #5a0e6d;
+    cursor: pointer;
+}
+#bl4 video
+{
+    margin: 0;
+    padding: 0;
+    height:150px;
+    /* border: 2.5px solid yellow; */
+    border-radius: 25px;
+
+}
+
+#bl1:hover,#bl2:hover,#bl3:hover,#bl4:hover
+{
+    animation: border 2000ms 2ms infinite;
+    background-color:red;
+}
+
+@keyframes border {
+    0%,100% {
+       
+       border: #d46bee 2.5px solid;
+   }
+    25% {
+         
+        border: yellow 2.5px solid;
+
+    }
+    50% {
+        
+        border: #d46bee 2.5px solid;
+   }
+    75% {
+         
+        border: yellow 2.5px solid;
+    }
+}
+@media screen and (max-width: 575px)
+{
+    body
+    {
+        margin-top:0;
+    }
+    .container-fluid
+    {
+        margin-top: 50px;
+        flex-direction: column;
+        border:orange 2px solid;
+    }
+    header
+    {
+        margin-top: -50px;      
+    }
+    nav
+    {
+        width: 80%;
+    }
+    #mn
+    {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 150px;
+    }
+    #b1,#b2,#b3,#b4
+    {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width:100%;
+        height:150px;   
+        font-size: 15px;
+        font-weight: bold; 
+    }   
+    #m1,#m2,#m3,#m4
+    {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 60%;
+        height:25px;
+    }
+    #a1,#a2,#a3,#a4
+    {
+        width: 40%;
+        height:2px;   
+    }
+    #button1
+    {
+        margin-top: 0;
+        width: 80%;
+    }
+    #button2
+    {
+        margin-top: 0;
+        width: 80%;
+    }
+    #but
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        align-content: space-between;
+        width:50%;
+        height:150px;
+    }
+    #back
+    {
+        border:1px solid #fef8e1;
+        width:100%;
+        height:650px;
+        margin-top: 0;
+        background:url("Img/concert1_EF.jpg") no-repeat center;
+        background-size: contain;
+    }
+    #back2
+    {
+        display: block;
+        border:1px solid #fef8e1;
+        width:100%;
+        height:750px;
+        z-index: -2;
+        background:url("Img/EF2a.jpg") no-repeat center;
+        background-size: contain;
+    }
+    
+    #blm
+    {
+        margin-top: 400px;
+        display: flex;
+        justify-content: space-around;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        z-index: 2;
+        width: 100%;
+        height: 1000px; 
+        border: green solid 2px;      
+    }
+    #tbl
+    {
+        width: 100%; 
+        border: yellow 1px solid;  
+    }
+    #morc
+    {
+        width: 50%;
+        height: 700px;
+        margin-top: 60px;
+        margin-left: -200px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    #tbl1
+    {
+        width: 40%;
+        color:#0a5707;
+        border-radius: 15px;
+        font-size:15px;
+        text-align: center;    
+    }
+    #vid2
+    {
+        width:60%;    
+    }
+    #bl1
+    {
+        width: 70%;
+        height: 130px;
+        border-radius: 25px;
+        background-color: aqua;
+        border: 3px solid #d46bee;
+    }
+    #bl2
+    {   
+        width: 70%;
+        height: 130px;
+        border-radius: 25px;
+        background-color: lime;
+        border: 3px solid #a357b6;
+    }
+    #bl3
+    {
+        width: 70%;
+        height: 130px;
+        border-radius: 25px;
+        background-color: lightsalmon;
+        border: 3px solid #741e8a;
+    }
+    #bl4
+    {
+        width: 70%;
+        height: 150px;
+        border-radius: 25px;
+        background-color: lightcoral;
+    }
+    footer
+    {
+        margin-top: 5px;
+        height:240px;
+    }
+    #infos
+    {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-direction: column;
+        width: 30%;
+    }
+}
+@media screen and (min-width:576px) and (max-width:991px)
+{
+    .container-fluid
+    {
+        margin-top: 50px;
+        flex-direction: column;
+        border:purple 2px solid;
+    }
+    header
+    {
+        display:flex;
+        justify-content: space-between;     
+    }
+    #vid
+    {
+        display:none;
+    }
+    nav
+    {
+        width:60%; 
+    }
+    #b0
+    {
+        font-size: 14px;
+        font-weight: bold; 
+    }
+    #b1,#b2,#b3,#b4
+    {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width:20%;
+        height:150px;   
+        font-size: 14px;
+        font-weight: bold; 
+    }
+    #button1
+    {
+        margin-top: 0;
+        width: 50%;
+    }
+    #button2
+    {
+        margin-top: 0;
+        width: 50%;
+    }
+    #but
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        align-content: space-between;
+        width:35%;
+        height:150px;
+    }
+    #vid
+    {
+        width:10%;
+    }
+    #back
+    {
+        margin-top: 50px;
+        width:100%;
+        height:830px;
+        background:url("Img/concert2_EF.jpg") no-repeat center;
+        background-size: cover;
+    }
+    #tbl1
+    {
+        font-size:17px;
+    }
+}
+@media screen and (min-width:992px) and (max-width: 1199px)
+{
+    #back
+    {
+        margin-top: 50px;
+        width:100%;
+        height:850px;
+        background:url("Img/concert_EF.jpg") no-repeat center;
+        background-size: cover;
+    }
+    #bl1,#bl2,#bl3,#bl4
+    {
+        width:15%; 
+    }
+}
+
+
+
