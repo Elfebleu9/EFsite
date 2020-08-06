@@ -1,8 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Epilogue&display=swap');
+
 body
 {
     margin:0;
     padding:0;  
     background:#fef8e1;
+    font-family: $third-font,$primary-font,$secondary-font,sans-serif;
 }
 .container-fluid
 {
@@ -170,7 +175,7 @@ nav a:hover
     width:100%;
     height:830px;
     margin-top: 50px;
-    background:url("Img/concert_EF.jpg") no-repeat center;
+    background:url("../Img/concert_EF.jpg") no-repeat center;
     background-size: cover;
 }
 #back2
@@ -359,7 +364,7 @@ footer a
     width: 20%;
     height: 200px;
     border-radius: 25px;
-    background-image:url(Img/mixtape_EF.jpg);
+    background-image:url(../Img/mixtape_EF.jpg);
     background-size: cover;
     border: 2.5px solid #d46bee;
     cursor: pointer;   
@@ -369,7 +374,7 @@ footer a
     width: 20%;
     height: 200px;
     border-radius: 25px;
-    background-image:url(Img/EF1.jpg);
+    background-image:url(../Img/EF1.jpg);
     background-size: cover;
     border: 2.5px solid #a357b6;
     cursor: pointer;
@@ -379,7 +384,7 @@ footer a
     width: 20%;
     height: 200px;
     border-radius: 25px;
-    background-image:url(Img/EF4.jpg);
+    background-image:url(../Img/EF4.jpg);
     background-size: cover;
     border: 2.5px solid #741e8a;
     cursor: pointer;
@@ -389,7 +394,7 @@ footer a
     width: 20%;
     height: 200px;
     border-radius: 25px;
-    /* background-image:url(Img/EF3.jpg);
+    /* background-image:url(../Img/EF3.jpg);
     background-size: cover; */
     border: 2.5px solid #5a0e6d;
     cursor: pointer;
@@ -510,7 +515,7 @@ footer a
         width:100%;
         height:650px;
         margin-top: 0;
-        background:url("Img/concert1_EF.jpg") no-repeat center;
+        background:url("../Img/concert1_EF.jpg") no-repeat center;
         background-size: contain;
     }
     #back2
@@ -520,7 +525,7 @@ footer a
         width:100%;
         height:750px;
         z-index: -2;
-        background:url("Img/EF2a.jpg") no-repeat center;
+        background:url("../Img/EF2a.jpg") no-repeat center;
         background-size: contain;
     }
     
@@ -677,7 +682,7 @@ footer a
         margin-top: 50px;
         width:100%;
         height:830px;
-        background:url("Img/concert2_EF.jpg") no-repeat center;
+        background:url("../Img/concert2_EF.jpg") no-repeat center;
         background-size: cover;
     }
     #blm
@@ -700,7 +705,6 @@ footer a
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-around;
-        border: red solid 1px;
     }
     #bl1, #bl2, #bl3, #bl4
     {
@@ -718,7 +722,7 @@ footer a
         margin-top: 50px;
         width:100%;
         height:850px;
-        background:url("Img/concert_EF.jpg") no-repeat center;
+        background:url("../Img/concert_EF.jpg") no-repeat center;
         background-size: cover;
     }
     #bl1,#bl2,#bl3,#bl4
@@ -726,6 +730,7 @@ footer a
         width:15%; 
     }
 }
+
 
 
 
