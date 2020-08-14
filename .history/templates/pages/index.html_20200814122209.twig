@@ -8,10 +8,7 @@
           {# {{ include('layouts/partials/_accueil.html.twig')}}   #}
           {% for extrait in extraits %}
                <article class="mt-3">
-                    <div>
-                         <img src="" alt="photo">
-                         <audio id="bl"  src='{{extrait.morceau}}' controls></audio>
-                    </div>
+                    <audio id="bl2"  src={{extrait.morceau}} controls></audio>
                     <h5>{{ extrait.titre}}<h5>
                </article>
 

@@ -13,7 +13,7 @@ class PagesController extends AbstractController
      */
     public function index(ExtraitRepository $extraitRepo)
     {
-        $extraits = $extraitRepo->findBy([],['createdAt'=> 'DESC'], 4);
+        $extraits = $extraitRepo->findAll();
 
 
 
