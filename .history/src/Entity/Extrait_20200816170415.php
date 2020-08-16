@@ -2,7 +2,6 @@
 
 namespace App\Entity;
 
-use App\Entity\Traits\Timestampable;
 use App\Repository\ExtraitRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\File;
@@ -16,7 +15,6 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
  */
 class Extrait
 {
-    use Timestampable;
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()
@@ -47,6 +45,16 @@ class Extrait
      * @var File|null
      */
     private $imageFile;
+
+    /**
+     * @ORM\Column(type="datetime", options={"default": "CURRENT_TIMESTAMP"})
+     */
+    private $createdAt;
+
+    /**
+     * @ORM\Column(type="datetime", options={"default": "CURRENT_TIMESTAMP"})
+     */
+    private $updatedAt;
 
     public function getId(): ?int
     {
@@ -89,7 +97,13 @@ class Extrait
         return $this;
     }
 
-    /**
+      /**
+     * If manually uploading a file (i.e. not using Symfony Form) ensure an instance
+     * of 'UploadedFile' is injected into this setter to trigger the update. If this
+     * bundle's configuration parameter 'inject_on_load' is set to 'true' this setter
+     * must be able to accept an instance of 'File' as the bundle will inject one here
+     * during Doctrine hydration.
+     *
      * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile|null $imageFile
      */
     public function setImageFile(?File $imageFile = null): void
@@ -108,6 +122,44 @@ class Extrait
         return $this->imageFile;
     }
 
+    public function getCreatedAt(): ?\DateTimeInterface
+    {
+        return $this->createdAt;
+    }
+
+    public function setCreatedAt(\DateTimeInterface $createdAt): self
+    {
+        $this->createdAt = $createdAt;
+
+        return $this;
+    }
+
+    public function getUpdatedAt(): ?\DateTimeInterface
+    {
+        return $this->updatedAt;
+    }
+
+    public function setUpdatedAt(\DateTimeInterface $updatedAt): self
+    {
+        $this->updatedAt = $updatedAt;
+
+        return $this;
+    }
+
+    /**
+     * @ORM\PrePersist
+     * @ORM\PreUpdate
+     */
+    public function updateTimestamps() 
+    {
+        if($this->getCreatedAt()===null)
+        {
+            $this->setCreatedAt (new \DateTimeImmutable);
+        }
+
+        $this->setUpdatedAt (new \DateTimeImmutable);
+
+    }
 
 
 }

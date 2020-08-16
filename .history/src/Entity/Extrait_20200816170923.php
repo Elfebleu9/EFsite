@@ -16,7 +16,7 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
  */
 class Extrait
 {
-    use Timestampable;
+    use Timestampable
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()

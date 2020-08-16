@@ -2,7 +2,6 @@
 
 namespace App\Entity;
 
-use App\Entity\Traits\Timestampable;
 use App\Repository\ExtraitRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\File;
@@ -16,7 +15,6 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
  */
 class Extrait
 {
-    use Timestampable;
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()
@@ -47,6 +45,16 @@ class Extrait
      * @var File|null
      */
     private $imageFile;
+
+    /**
+     * @ORM\Column(type="datetime", options={"default": "CURRENT_TIMESTAMP"})
+     */
+    private $createdAt;
+
+    /**
+     * @ORM\Column(type="datetime", options={"default": "CURRENT_TIMESTAMP"})
+     */
+    private $updatedAt;
 
     public function getId(): ?int
     {
@@ -89,25 +97,44 @@ class Extrait
         return $this;
     }
 
+    public function getCreatedAt(): ?\DateTimeInterface
+    {
+        return $this->createdAt;
+    }
+
+    public function setCreatedAt(\DateTimeInterface $createdAt): self
+    {
+        $this->createdAt = $createdAt;
+
+        return $this;
+    }
+
+    public function getUpdatedAt(): ?\DateTimeInterface
+    {
+        return $this->updatedAt;
+    }
+
+    public function setUpdatedAt(\DateTimeInterface $updatedAt): self
+    {
+        $this->updatedAt = $updatedAt;
+
+        return $this;
+    }
+
     /**
-     * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile|null $imageFile
+     * @ORM\PrePersist
+     * @ORM\PreUpdate
      */
-    public function setImageFile(?File $imageFile = null): void
+    public function updateTimestamps() 
     {
-        $this->imageFile = $imageFile;
-
-        if (null !== $imageFile) {
-            // It is required that at least one field changes if you are using doctrine
-            // otherwise the event listeners won't be called and the file is lost
-            $this->setUpdatedAt(new \DateTimeImmutable);
+        if($this->getCreatedAt()===null)
+        {
+            $this->setCreatedAt (new \DateTimeImmutable);
         }
-    }
 
-    public function getImageFile(): ?File
-    {
-        return $this->imageFile;
-    }
+        $this->setUpdatedAt (new \DateTimeImmutable);
 
+    }
 
 
 }
