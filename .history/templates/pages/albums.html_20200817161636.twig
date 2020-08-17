@@ -1,0 +1,23 @@
+{% extends 'Layouts/base2.html.twig' %}
+
+{% block title %}Albums et sons{% endblock %}
+
+{% block body %}
+    <h1>Albums</h1>
+
+    <div class="vid3"></div>
+     <div class="container-fluid mt-7">  
+          {# {{ include('layouts/partials/_accueil.html.twig')}}   #}
+          {% for morceau in morceaux %}
+               <article class="mt-3">
+                    <div>
+                         <img src="" alt="photo">
+                         <audio id="bl"  src='{{morceau.morceau}}' controls></audio>
+                    </div>
+                    <h5>{{ extrait.titre}}<h5>
+               </article>
+
+          {% endfor %}
+     </div>
+
+{% endblock %}
