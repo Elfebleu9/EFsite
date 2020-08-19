@@ -28,14 +28,14 @@ class Extrait
     /**
      * @ORM\Column(type="string", length=255)
      * @Assert\NotBlank
-     * @Assert\Length(min=7,minMessage="Le libellé est trop court.")
+     * @Assert\Length(min=7)
      */
     private $morceau;
 
     /**
      * @ORM\Column(type="string", length=255)
      * @Assert\NotBlank
-     * @Assert\Length(min=5,minMessage="Le libellé est trop court.")
+     * @Assert\Length(min=5,minMessage="Le titre est trop court.")
      */
     private $titre;
 

@@ -28,19 +28,17 @@ class Extrait
     /**
      * @ORM\Column(type="string", length=255)
      * @Assert\NotBlank
-     * @Assert\Length(min=7,minMessage="Le libellé est trop court.")
      */
     private $morceau;
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Assert\NotBlank
-     * @Assert\Length(min=5,minMessage="Le libellé est trop court.")
      */
     private $titre;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @Assert\NotBlank
      */
     private $photo;
 
