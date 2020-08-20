@@ -11,7 +11,7 @@
           {% for morceau in morceaux %}
                <article class="mt-3">
                     <div>
-                         <a href="{{path('app_pagesAd_show',{id:morceau.id})}}"><img src="" alt="photo"></a>
+                         <a href="{{path('app_pagesAd_edit',{id:morceau.id})}}"><img src="" alt="photo"></a>
                          <audio id="bl"  src='{{morceau.morceau}}' controls></audio>
                     </div>
                     <h5>{{ morceau.titre}}<h5>
