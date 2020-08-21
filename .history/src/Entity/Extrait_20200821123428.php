@@ -43,7 +43,7 @@ class Extrait
      * NOTE: This is not a mapped field of entity metadata, just a simple property.
      * 
      * @Vich\UploadableField(mapping="extrait_photo", fileNameProperty="photo")
-     * @Assert\Image(maxSize="8M", maxSizeMessage="Le fichier est trop lourd({{size}}{{suffix}}). Le maximum autorisé est {{limit}}{{suffix}}.")
+     * @Assert\Image(maxSize="8M")
      * 
      * @var File|null
      */
