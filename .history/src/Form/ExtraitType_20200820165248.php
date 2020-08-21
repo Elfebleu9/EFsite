@@ -17,12 +17,15 @@ class ExtraitType extends AbstractType
         $builder
             ->add('morceau')
             ->add('titre')
-            ->add('imageFile', VichImageType::class, [
-                'label'=> 'Image (JPG ou PNG)',
+            ->add('photo', VichImageType::class, [
                 'required' => false,
-                'allow_delete' => true,               
-                'download_uri' => false,
-                'imagine_pattern' =>'squared_thumbnail_small'
+                'allow_delete' => true,
+                'delete_label' => '...',
+                'download_label' => '...',
+                'download_uri' => true,
+                'image_uri' => true,
+                // 'imagine_pattern' => '...',
+                'asset_helper' => true,
             ])
             ->add('type', ChoiceType::class, [
                 'choices'    => ['Morceau'=>false,'Extrait'=>true],

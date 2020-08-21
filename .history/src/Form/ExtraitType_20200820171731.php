@@ -17,7 +17,7 @@ class ExtraitType extends AbstractType
         $builder
             ->add('morceau')
             ->add('titre')
-            ->add('imageFile', VichImageType::class, [
+            ->add('photo', VichImageType::class, [
                 'label'=> 'Image (JPG ou PNG)',
                 'required' => false,
                 'allow_delete' => true,               

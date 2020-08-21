@@ -7,16 +7,11 @@
      <div class="container-fluid mt-7">  
           {# {{ include('layouts/partials/_accueil.html.twig')}}   #}
           {% for extrait in extraits %}
-               <div class="">
-                    <article id="bl1"class="mt-3 overflow-hidden">
-                         <div>
-                              <a href="{{path('app_pagesAd_show',{id:extrait.id})}}"><img src="{{ (extrait.photo ? vich_uploader_asset(extrait) : asset('build/images/placeholder.jpg'
-                              ))| imagine_filter('squared_thumbnail_small') }}" alt="photo"></a>
-                         </div>
-                         {# <div>
+               <div class="flex row col-12">
+                    <article class="mt-3 col-3">
+                         <div class="">
+                              <a href="{{path('app_pagesAd_show',{id:extrait.id})}}"><img src="" alt="photo"></a>
                               <audio id="bl"  src='{{extrait.morceau}}' controls></audio>
-                         </div> #}
-                         <div>
                               <h5>{{ extrait.titre}}<h5>
                          </div>                   
                     </article>
