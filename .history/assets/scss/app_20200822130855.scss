@@ -752,25 +752,10 @@ footer a
     }
 }
 
-.vich-image 
+.vich-image .form-check
 {
-    .form-check
-    {
-        @extend .mt-3;
-        
-    }
-
-    img
-    {
-        @extend .mb-2;
-        @extend .rounded;
-         @extend .shadow;
-        @extend .img-thumbnail;
-    }
-    
+    @extend .mt-3
 }
-
-
 
 
 

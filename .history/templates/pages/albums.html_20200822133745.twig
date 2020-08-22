@@ -9,7 +9,7 @@
      <div class="container-fluid mt-7">  
           {# {{ include('layouts/partials/_accueil.html.twig')}}   #}
           {% for morceau in morceaux %}
-               <article class="mt-3">
+               <article class="mt-3 center">
                     <div>
                          <a href="{{path('app_pagesAd_show',{id:morceau.id})}}"><img src="{{ (morceau.photo ? vich_uploader_asset(morceau) : asset('build/images/placeholder.jpg'
                         ))| imagine_filter('long_thumbnail_small') }}" alt="photo"></a>
