@@ -1,5 +1,8 @@
-import $ from 'jquery';
-
+  // impression titre dans input photo
+$('.custom-file-input').on('change', function(){
+    alert('Hello');
+});
+  
 // Barres "color" sous les onglets
 let change0 = document.getElementById('b0');
 let bar0 = document.getElementById('a0');
@@ -61,10 +64,6 @@ function changeback4(){
     bar4.style.backgroundColor ='';
 }
 
-// impression titre dans input photo
-$('.custom-file-input').on('change', function(e){
-    let inputFile = e.currentTarget;
-    $(inputFile).parent().find('.custom-file-label').html(inputFile.files[0].name);
-});
+
 
 

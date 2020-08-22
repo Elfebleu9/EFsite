@@ -1,18 +1,23 @@
+/*
+ * Welcome to your app's main JavaScript file!
+ *
+ * We recommend including the built version of this JavaScript file
+ * (and its CSS file) in your base layout (base.html.twig).
+ */
+
+// any CSS you import will output into a single css file (app.css in this case)
+import '../scss/app.scss';
+// import '../images';
+
+// Need jQuery? Install it with "yarn add jquery", then uncomment to import it.
 import $ from 'jquery';
+import 'bootstrap';
+
+
+
+
 
 // Barres "color" sous les onglets
-let change0 = document.getElementById('b0');
-let bar0 = document.getElementById('a0');
-change0.addEventListener('mouseover',changeback0);
-change0.addEventListener('mouseout',resetback0);
-
-function changeback0(){
-    bar0.style.backgroundColor = 'rgb(246, 18, 18)';
-}
-function resetback0(){
-    bar0.style.backgroundColor ='';
-}
-
 let change1 = document.getElementById('b1');
 let bar1 = document.getElementById('a1');
 change1.addEventListener('mouseover',changeback1);
@@ -61,10 +66,7 @@ function changeback4(){
     bar4.style.backgroundColor ='';
 }
 
-// impression titre dans input photo
 $('.custom-file-input').on('change', function(e){
     let inputFile = e.currentTarget;
     $(inputFile).parent().find('.custom-file-label').html(inputFile.files[0].name);
 });
-
-
