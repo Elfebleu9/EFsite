@@ -1,0 +1,27 @@
+{% extends 'Layouts/base2.html.twig' %}
+
+{% block title %}Albums et sons{% endblock %}
+
+{% block body %}
+    <h1>Albums</h1>
+
+    <div class="vid3"></div>
+     <div class="container-fluid mt-7">  
+          {# {{ include('layouts/partials/_accueil.html.twig')}}   #}
+          {% for row in morceaux|batch(4) %}
+               <div class="row thumbnail">
+                    {% for morceau in row %}
+                         <article  id="bl" class="col-md-3 mt-3 overflow-hidden">
+                              <div id="intbl">
+                                   <a href="{{path('app_pagesAd_show',{id:morceau.id})}}"><img class="bord²" src="{{ (morceau.photo ? vich_uploader_asset(morceau) : asset('build/images/placeholder.jpg'
+                              ))| imagine_filter('long_thumbnail_small') }}" alt="photo"></a>
+                                   <audio id="aud"  src='{{morceau.morceau}}' controls></audio>
+                              </div>
+                              <h5 >{{ morceau.titre}}<h5>
+                         </article>
+                    {% endfor %}
+               </div>
+          {% endfor %}
+     </div>
+
+{% endblock %}
