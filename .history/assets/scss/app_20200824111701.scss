@@ -365,10 +365,9 @@ footer a
     width:80%;   
 }
 
-.extr img
+.extr
 {
-    transition:transform 0.3s ease-out;
-    &:hover
+    img:hover
     {
         transform: scale(1.075);
     }

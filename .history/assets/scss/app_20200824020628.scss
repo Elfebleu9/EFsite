@@ -365,13 +365,18 @@ footer a
     width:80%;   
 }
 
-.extr img
+article
 {
-    transition:transform 0.3s ease-out;
-    &:hover
-    {
-        transform: scale(1.075);
-    }
+    padding:0;
+}
+
+// .bord
+// {
+//     border:1px solid orange;
+// }
+#aud
+{
+    border:1px solid blue;
 }
 
 #intbl
@@ -448,6 +453,17 @@ footer a
 .marg
 {
     margin-top:200px;
+}
+ 
+img .extr
+{
+
+    border: 1px green solid;
+
+    & :hover
+        {
+            transform: scale(1.075);
+        }
 }
 
 @keyframes border {

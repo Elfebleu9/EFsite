@@ -8,7 +8,7 @@
         
         <div class="col-md-6 mx-auto">
            <article class="mt-5 mb-3  bg-warning rounded shadow">
-                <div class="d-flex justify-content-around align-items-center">
+                <div class="d-flex flex-direction-row">
                     <div class="mw-100 rounded-top overflow-hidden">
                         <img src="{{ (extrait.photo ? vich_uploader_asset(extrait) : asset('build/images/placeholder.jpg'
                             ))| imagine_filter('squared_thumbnail_small') }}" alt="{{ extrait.titre }}" class="ml-3 mt-3 w-99 img-thumbnail " />
@@ -33,7 +33,7 @@
                         </form>                     
                     </div>
                 </div>
-            </article></br>
+            </article>
             
         </div> 
     </div>  

@@ -13,9 +13,9 @@
                     {% for morceau in row %}
                          <div class="col-md-3">
                               <article class=" extr bg-white rounded shadow">
-                                   <div id="intbl" class="mw-100 overflow-hidden rounded">
+                                   <div id="intbl">
                                         <a href="{{path('app_pagesAd_show',{id:morceau.id})}}"><img src="{{ (morceau.photo ? vich_uploader_asset(morceau) : asset('build/images/placeholder.jpg'
-                                        ))| imagine_filter('long_thumbnail_small') }}" class=" img-thumbnail w-100" alt="photo"></a>
+                                   ))| imagine_filter('long_thumbnail_small') }}" class="bord img-thumbnail w-100" alt="photo"></a>
                                         {# <audio id="aud"  src='{{morceau.morceau}}' controls></audio> #}
                                    </div>
                                    <h5 class="text-center">{{ morceau.titre}}<h5>
