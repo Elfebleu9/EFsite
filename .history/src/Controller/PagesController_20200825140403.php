@@ -11,7 +11,6 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use App\Repository\ExtraitRepository;
 
 class PagesController extends AbstractController
 {

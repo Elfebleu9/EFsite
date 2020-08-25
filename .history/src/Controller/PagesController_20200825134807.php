@@ -4,14 +4,13 @@ namespace App\Controller;
 
 use App\Entity\Extrait;
 use App\Form\ExtraitType;
-use App\Repository\UserRepository;
+use App\Repository\ExtraitRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use App\Repository\ExtraitRepository;
 
 class PagesController extends AbstractController
 {
@@ -62,7 +61,7 @@ class PagesController extends AbstractController
     /**
     * @Route("/pagesAd/create", name="app_pagesAd_create", methods={"GET","POST"})
     */
-    public function create(Request $request, EntityManagerInterface $em, UserRepository $userRepo) : Response
+    public function create(Request $request, EntityManagerInterface $em, ExtraitRepository $extraitRepo) : Response
     {
         $extrait= new Extrait;
 
@@ -72,7 +71,7 @@ class PagesController extends AbstractController
 
         if($form-> isSubmitted() && $form-> isValid())
         {
-            $JM=$userRepo->findOneBy(['pseudo'=>'Elfebleu9']);
+            $JM=$extraitRepo->findOneBy(['pseudo'=>'Elfebleu9']);
             $extrait->setUser($JM);
             $em->persist($extrait);
             $em->flush();
