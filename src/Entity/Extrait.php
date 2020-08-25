@@ -59,6 +59,12 @@ class Extrait
      */
     private $type;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="extraits")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $user;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -127,6 +133,18 @@ class Extrait
     public function setType(?string $type): self
     {
         $this->type = $type;
+
+        return $this;
+    }
+
+    public function getUser(): ?User
+    {
+        return $this->user;
+    }
+
+    public function setUser(?User $user): self
+    {
+        $this->user = $user;
 
         return $this;
     }

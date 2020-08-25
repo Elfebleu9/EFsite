@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
 use App\Entity\Traits\Timestampable;
@@ -52,6 +54,16 @@ class User implements UserInterface
      * @ORM\Column(type="string", length=255)
      */
     private $email;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Extrait::class, mappedBy="user", orphanRemoval=true)
+     */
+    private $extraits;
+
+    public function __construct()
+    {
+        $this->extraits = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -165,6 +177,37 @@ class User implements UserInterface
     public function setEmail(string $email): self
     {
         $this->email = $email;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Extrait[]
+     */
+    public function getExtraits(): Collection
+    {
+        return $this->extraits;
+    }
+
+    public function addExtrait(Extrait $extrait): self
+    {
+        if (!$this->extraits->contains($extrait)) {
+            $this->extraits[] = $extrait;
+            $extrait->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeExtrait(Extrait $extrait): self
+    {
+        if ($this->extraits->contains($extrait)) {
+            $this->extraits->removeElement($extrait);
+            // set the owning side to null (unless already changed)
+            if ($extrait->getUser() === $this) {
+                $extrait->setUser(null);
+            }
+        }
 
         return $this;
     }
