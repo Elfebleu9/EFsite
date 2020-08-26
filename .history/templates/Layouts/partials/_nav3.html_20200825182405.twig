@@ -1,4 +1,4 @@
-<div id="vid3"></div>
+
 <header>
     <a id='b0' href={{path('app_home')}} target="">
         <div id="m0">Accueil</div>
@@ -26,15 +26,8 @@
             </a>
         </div>
     </nav>
-    {% if app.user %}
-        <div id="but">
-            <a id="button1" id="con"  href="{{path('app_logout')}}" target="">Je me déconnecte</a>
-        </div>
-    {% else %}
-        <div id="but">
-            <a id="button1" id="con"  href="{{path('app_login')}}" target="">Je me connecte</a>
-            <a id="button2" id="ins" href='*' target="">Je m'inscris</a>
-        </div>
-    {% endif %}
+    <div id="but">
+        <a id="button1" id="con"  href="{{path('app_logout')}}" target="">Je me déconnecte</a>
+    </div>
             
 </header>

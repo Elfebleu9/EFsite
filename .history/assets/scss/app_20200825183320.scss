@@ -296,7 +296,11 @@ footer a
     width:10%;
     height:20px;
 }
-
+#vid2
+{
+    width:20%;
+    height:20px;
+}
 #vid3
 {
     width:100%;
@@ -781,28 +785,6 @@ footer a
         
     }
     
-}
-
-.alert{
-    padding:10px;
-    color:white;
-    text-align:center;
-    margin:0;
-    border:none;
-    border-radius:0;
-
-    &.alert-success{
-        background-color:lightgreen;
-    }
-    &.alert-info{
-        background-color:blue;
-    }
-    &.alert-danger{
-        background-color:orange;
-    }
-    &.alert-error{
-        background-color:red;
-    }
 }
 
 
