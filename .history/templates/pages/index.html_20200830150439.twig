@@ -1,0 +1,53 @@
+{% extends 'layouts/base.html.twig' %}
+
+{% block title %}Elvys Futur - Site officiel{% endblock %}
+
+{% block body %}
+     
+     <div id="back"> 
+          <div id="vid5"></div>
+          <h1 class="mt-5 text-white">Bienvenue</h1>
+          <div id="vid3"></div> 
+          <div id="tbl">
+               <h3 class="ml-2" id="tbl1">Extraits à l'écoute :</h3>
+               <div id="vid2"></div>  
+          </div>
+               <div class="row m-5 ">
+                    
+                    {% for extrait in extraits %}               
+                         <article  class="col-sm-5 col-md-3 mt-3 extr">
+                              {# <div class="">                                 #}
+                                        <div class="thumb mw-100 d-flex justify-content-center rounded">
+                                             
+                                             <div class="containerL">
+                                                  <a href="{{path('app_pagesAd_show',{id:extrait.id})}}"><img src="{{ (extrait.photo ? vich_uploader_asset(extrait) : asset('build/image/placeholder.jpg'
+                                                  ))| imagine_filter('long_thumbnail_small') }}" class=" img-thumbnail" alt="photo"></a>     
+                                                  <audio src="{{extrait.morceau}}" class="audio"></audio>
+
+                                                  <div class="controls d-flex">
+                                                       <div class="orange-bar">
+                                                            <div class="orange-juice"></div>
+                                                       </div>
+
+                                                       <div class="buttons d-flex justify-content-end align-items-center">
+                                                            <button id="play-pause"></button>
+                                                            <button id="mute">Mute</button>
+                                                            <input type="range" id="volumeSlider" type="range" min="0" max="100" value="50" step="1">
+                                                       </div> 
+                                                  </div>                                            
+                                             </div>      
+                                        </div>
+                                        <h5 class="mt-3 ml-4 text-center text-white">{{ extrait.titre}}<h5>
+                                        <div id="vid4b"></div>
+                                                                   
+                              {# </div>                                            #}
+                         </article>
+                         
+                    {% endfor %}
+                   
+               </div>
+          
+          
+     </div>
+     <div id='back2'>
+{% endblock %}

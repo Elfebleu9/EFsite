@@ -81,15 +81,63 @@ window.onscroll = function () {
   } else {
     navh.style.position = 'static';
   }
-}; // const navh = document.querySelector('header');
-// window.navh=navh;
-// window.addEventListener('scroll', ()=> {
-//     if(window.scrollY>navh.offsetTop){
-//         navh.style.position ='fixed';
-//         navh.style.top=0;
-//         navh.style.width="100%";
-//     }
-//     else{
-//         navh.style.position='static';
-//     }
-// })
+};
+
+var audio = document.querySelector('.audio');
+var juice = document.querySelector('.orange-juice');
+var btn = document.getElementById('play-pause');
+var muteBtn = document.getElementById('mute');
+var volumeslider = document.getElementById('volumeSlider');
+var orangeBar = document.querySelector('.orange-bar');
+
+function togglePlayPause() {
+  if (audio.paused) {
+    btn.className = "pause";
+    audio.play();
+  } else {
+    btn.className = "play";
+    audio.pause();
+  }
+}
+
+btn.onclick = function () {
+  togglePlayPause();
+}; // barre orange
+
+
+audio.addEventListener('timeupdate', function () {
+  var juicePos = audio.currentTime / audio.duration;
+  juice.style.width = juicePos * 100 + '%';
+
+  if (audio.ended) {
+    btn.className = "play";
+  }
+}); // mute la audio
+
+muteBtn.addEventListener('click', function () {
+  if (audio.muted) {
+    audio.muted = false;
+    muteBtn.innerHTML = "Mute";
+  } else {
+    audio.muted = true;
+    muteBtn.innerHTML = "Unmute";
+  }
+}); // Volume
+
+volumeslider.addEventListener('change', function () {
+  audio.volume = volumeslider.value / 100;
+}); // la barre orange clikable
+
+var rect = orangeBar.getBoundingClientRect();
+console.log(rect);
+var largeur = rect.width;
+orangeBar.addEventListener('click', function (e) {
+  // la valeur de notre click sur x par rapport a notre element
+  var x = e.clientX - rect.left;
+  var widthPercent = x * 100 / largeur;
+  var currentTimeTrue = widthPercent * 63 / 100; // position en secondes
+
+  audio.currentTime = currentTimeTrue; // barre orange qui va la ou on clique
+
+  juice.style.width = widthPercent + '%';
+});
