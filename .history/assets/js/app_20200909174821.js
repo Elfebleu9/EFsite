@@ -7,6 +7,7 @@
 
 // any CSS you import will output into a single css file (app.css in this case)
 import $ from 'jquery';
+
 import 'bootstrap';
 import '../scss/app.scss';
 
@@ -81,6 +82,21 @@ window.onscroll= function(){
     }
 };
 
+// synchro barre controls - img
+
+var change5 = document.querySelector('.img-thumbnail');
+var barre = document.querySelector('.controls');
+change5.addEventListener('mouseover',changeback5);
+change5.addEventListener('mouseout',resetback5);
+
+function changeback5(){
+    barre.style.transition = 'transform 0.3s ease-out';
+    barre.style.transform = 'scale(1.075)';
+}
+ function resetback5(){
+    barre.style.transition = 'transform 0.3s ease-out';
+    barre.style.transform = 'scale(1)';
+}
 
 
 

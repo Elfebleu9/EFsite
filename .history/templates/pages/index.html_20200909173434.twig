@@ -23,7 +23,7 @@
                                                   <a href="{{path('app_pagesAd_show',{id:extrait.id})}}"><img src="{{ (extrait.photo ? vich_uploader_asset(extrait) : asset('build/image/placeholder.jpg'
                                                   ))| imagine_filter('long_thumbnail_medium') }}" class=" img-thumbnail w-100" alt="photo"></a>
                                                   {# <span id="audiopl"></span>      #}
-                                                  <audio src="{{extrait.morceau}}" crossOrigin="anonymous" preload="auto" type="audio/mp3" class="audio"></audio>
+                                                  <audio src="{{extrait.morceau}}"  preload="auto" type="audio/mp3" class="audio"></audio>
                                                   <div class="controls w-100 rounded">
                                                        <div class="orange-bar">
                                                             <div class="orange-juice"></div>

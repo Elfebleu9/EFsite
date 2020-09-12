@@ -118,7 +118,7 @@ module.exports = {
 module.exports = {
     entry: './assets/js/sons.js',
     output:{
-        path: path.resolve('./dist'),      
+        path: path.resolve('./toto'),      
     },
     module: {
         rules: [

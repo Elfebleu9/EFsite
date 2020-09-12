@@ -25,7 +25,7 @@ Encore
      */
     .addEntry('app', './assets/js/app.js')
     .addEntry('app2', './assets/js/app2.js')
-    .addEntry('sons', './assets/js/sons.js')
+    .addEntry('sons', './assets/sons/sons.js')
     //.addEntry('page2', './assets/js/page2.js')
 
     // Alias
@@ -116,7 +116,7 @@ module.exports = {
 };
 
 module.exports = {
-    entry: './assets/js/sons.js',
+    entry: './assets/sons/sons.js',
     output:{
         path: path.resolve('./dist'),      
     },

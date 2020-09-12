@@ -139,7 +139,7 @@ module.exports = {
                 options: {
                     name: '[path][name].[hash:8].[ext]',
                     outputPath: 'sons',
-                    publicPath: 'assets',
+                    publicPath: 'toto',
 
                 }
             },

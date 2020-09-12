@@ -138,7 +138,7 @@ module.exports = {
                 use:['file-loader'],
                 options: {
                     name: '[path][name].[hash:8].[ext]',
-                    outputPath: 'sons',
+                    outputPath: 'toto',
                     publicPath: 'assets',
 
                 }
