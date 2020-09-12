@@ -25,6 +25,6 @@ yarn-error.log
 /public/media/cache/
 ###< liip/imagine-bundle ###
 
-###> custom app ignores ###
+###> custom app git ignores ###
 /public/uploads/
-###< end custom app ignores ###
+###< end custom app git ignores ###
