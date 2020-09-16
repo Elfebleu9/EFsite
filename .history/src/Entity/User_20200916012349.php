@@ -3,14 +3,24 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Validator\Constraints as Assert;
+use App\Entity\Traits\Timestampable;
 
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
+ * @ORM\Table(name="users")
+ * @ORM\HasLifecycleCallbacks
+ * @UniqueEntity(fields={"pseudo"}, message="Ce pseudo est déjà utilisé")
+ * @UniqueEntity(fields={"email"}, message="Cette adresse mail est déjà utilisée")
  */
 class User implements UserInterface
 {
+    use Timestampable;
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()
@@ -20,16 +30,19 @@ class User implements UserInterface
 
      /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank(message="Veuillez saisir votre prénom")
      */
     private $prenom;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank(message="Veuillez saisir votre nom")
      */
     private $nom;
 
     /**
-     * @ORM\Column(type="string", length=180, unique=true)
+     * @ORM\Column(type="string", length=255, unique=true)
+     * @Assert\NotBlank(message="Veuillez saisir votre pseudo")
      */
     private $pseudo;
 
@@ -45,9 +58,26 @@ class User implements UserInterface
     private $password;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, unique=true)
+     * @Assert\NotBlank(message="Veuillez saisir une adresse mail valide")
+     * @Assert\Email
      */
     private $email;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Extrait::class, mappedBy="user", orphanRemoval=true)
+     */
+    private $extraits;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $isVerified = false;
+
+    public function __construct()
+    {
+        $this->extraits = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -161,6 +191,49 @@ class User implements UserInterface
     public function setEmail(string $email): self
     {
         $this->email = $email;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Extrait[]
+     */
+    public function getExtraits(): Collection
+    {
+        return $this->extraits;
+    }
+
+    public function addExtrait(Extrait $extrait): self
+    {
+        if (!$this->extraits->contains($extrait)) {
+            $this->extraits[] = $extrait;
+            $extrait->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeExtrait(Extrait $extrait): self
+    {
+        if ($this->extraits->contains($extrait)) {
+            $this->extraits->removeElement($extrait);
+            // set the owning side to null (unless already changed)
+            if ($extrait->getUser() === $this) {
+                $extrait->setUser(null);
+            }
+        }
+
+        return $this;
+    }
+
+    public function isVerified(): bool
+    {
+        return $this->isVerified;
+    }
+
+    public function setIsVerified(bool $isVerified): self
+    {
+        $this->isVerified = $isVerified;
 
         return $this;
     }

@@ -15,7 +15,7 @@
             {{ form_start(registrationForm) }}
                 <div class="row">
                     <div class="col-6">
-                        {{ form_row(registrationForm.prenom,{label:'Prénom'})}}
+                        {{ form_row(registrationForm.prenom) }}
                     </div>
                     <div class="col-6">
                         {{ form_row(registrationForm.nom) }}
@@ -34,8 +34,8 @@
                 {{ form_row(registrationForm.email) }}
                 {{ form_row(registrationForm.agreeTerms) }}
 
-                <button type="submit" class="btn btn-primary btn-block">Je valide</button>
-                <p class="my-5 text-center text-muted">Tu as déjà un compte ?<a href="{{path('app_login')}}">Connecte-toi !</a></p>
+                <button type="submit" class="btn btn-primary btn-block formnovalidate">Je valide</button>
+                <p class="my-5 text-center text-muted"><span class="">Tu as déjà un compte ?</span><a href="{{path('app_login')}}">Connecte-toi !</a></p>
             {{ form_end(registrationForm) }}
             
         </div>

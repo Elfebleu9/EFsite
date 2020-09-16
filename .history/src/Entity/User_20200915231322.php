@@ -15,8 +15,7 @@ use App\Entity\Traits\Timestampable;
  * @ORM\Entity(repositoryClass=UserRepository::class)
  * @ORM\Table(name="users")
  * @ORM\HasLifecycleCallbacks
- * @UniqueEntity(fields={"pseudo"}, message="Ce pseudo est déjà utilisé")
- * @UniqueEntity(fields={"email"}, message="Cette adresse mail est déjà utilisée")
+ * @UniqueEntity(fields={"pseudo"}, message="There is already an account with this pseudo")
  */
 class User implements UserInterface
 {
@@ -58,7 +57,7 @@ class User implements UserInterface
     private $password;
 
     /**
-     * @ORM\Column(type="string", length=255, unique=true)
+     * @ORM\Column(type="string", length=255)
      * @Assert\NotBlank(message="Veuillez saisir une adresse mail valide")
      * @Assert\Email
      */
