@@ -5,7 +5,10 @@ namespace App\Form;
 use App\Entity\Extrait;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Vich\UploaderBundle\Form\Type\VichImageType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 
 class ExtraitType extends AbstractType
 {
@@ -14,8 +17,17 @@ class ExtraitType extends AbstractType
         $builder
             ->add('morceau')
             ->add('titre')
-            ->add('photo')
-            ->add('type')
+            ->add('imageFile', VichImageType::class, [
+                'label'=> 'Image (JPG ou PNG)',
+                'required' => false,
+                'allow_delete' => true,               
+                'download_uri' => false,
+                'imagine_pattern' =>'long_thumbnail_small'
+            ])
+            ->add('type', ChoiceType::class, [
+                'choices'    => ['Morceau'=>false,'Extrait'=>true],
+                'required' => true
+            ])
             
         ;
     }

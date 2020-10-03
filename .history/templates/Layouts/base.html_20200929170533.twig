@@ -10,26 +10,28 @@
         
         {% block stylesheets %}
             {{encore_entry_link_tags('app')}}
+            <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
         {% endblock %}
     </head>  
-    <body>
-        <div id="vid3"></div>
-        {{ include('layouts/partials/_flash_messages.html.twig')}}
+    <body>       
         {{include('layouts/partials/_nav1.html.twig')}}
-        
+        {{ include('layouts/partials/_flash_messages.html.twig')}}       
         <main role="main" class="container-fluid">
-                
+                       
             {% block body %}
             {% endblock %}
-            <nav>
-                <ul>
-                    <li><a href="{{path('app_pagesAd_create')}}">New pin</a></li>                   
-                </ul>
-            </nav>
+            
         </main>
+        <div id="vid1"></div>
+        <nav>
+            <ul>
+                <li><a href="{{path('app_pagesAd_create')}}">New pin</a></li>                   
+            </ul>
+        </nav>
         {{include('layouts/partials/_footer.html.twig')}}
         {% block javascripts %}
-               {{encore_entry_script_tags('app')}}     
+               {{encore_entry_script_tags('app')}}
+               {{encore_entry_script_tags('sons')}}      
         {% endblock %}
     </body>   
 </html>
