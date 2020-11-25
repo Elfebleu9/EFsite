@@ -25,14 +25,14 @@ class Extrait
      */
     private $id;
 
-    // /**
-    //  * NOTE: This is not a mapped field of entity metadata, just a simple property.
-    //  * 
-    //  * @Vich\UploadableField(mapping="extrait_morceau", fileNameProperty="morceau")
-    //  * 
-    //  * @var File|null
-    //  */
-    // private $soundFile;
+    /**
+     * NOTE: This is not a mapped field of entity metadata, just a simple property.
+     * 
+     * @Vich\UploadableField(mapping="extrait_morceau", fileNameProperty="morceau")
+     * 
+     * @var File|null
+     */
+    private $soundFile;
     /**
      * @ORM\Column(type="string", length=255)
      * @Assert\NotBlank

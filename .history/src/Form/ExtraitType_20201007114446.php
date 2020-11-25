@@ -18,7 +18,8 @@ class ExtraitType extends AbstractType
             ->add('morceau',VichFileType::class,[
                 'required' => false,
                 'allow_delete' => false,
-                'download_uri' => false           
+                'download_uri' => false,
+                'constraints' =>['mimeTypes'=>'application/mp3']            
             ])
             ->add('titre')
             ->add('imageFile', VichImageType::class, [

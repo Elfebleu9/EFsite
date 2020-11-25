@@ -7,7 +7,7 @@ import '../scss/app.scss';
 // synchro barre controls - img
 
 const change5 = document.querySelector('.img-thumbnail');
-const barre = document.querySelector('.controls');
+let barre = document.querySelector('.controls');
 change5.addEventListener('mouseover',changeback5);
 change5.addEventListener('mouseout',resetback5);
 

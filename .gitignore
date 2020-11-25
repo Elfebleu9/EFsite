@@ -28,3 +28,8 @@ yarn-error.log
 ###> custom app ignores ###
 /public/uploads/
 ###< end custom app ignores ###
+
+###> friendsofphp/php-cs-fixer ###
+/.php_cs
+/.php_cs.cache
+###< friendsofphp/php-cs-fixer ###

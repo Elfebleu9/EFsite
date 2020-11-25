@@ -28,7 +28,7 @@ class Extrait
     // /**
     //  * NOTE: This is not a mapped field of entity metadata, just a simple property.
     //  * 
-    //  * @Vich\UploadableField(mapping="extrait_morceau", fileNameProperty="morceau")
+    //  * @Vich\UploadableField(mapping="extrait_file", fileNameProperty="morceau")
     //  * 
     //  * @var File|null
     //  */
@@ -50,7 +50,7 @@ class Extrait
     /**
      * NOTE: This is not a mapped field of entity metadata, just a simple property.
      * 
-     * @Vich\UploadableField(mapping="extrait_photo", fileNameProperty="photo")
+     * @Vich\UploadableField(mapping="extrait_file", fileNameProperty="photo")
      * @Assert\Image(maxSize="8M", maxSizeMessage="Le fichier est trop lourd({{size}}{{suffix}}). Le maximum autorisé est {{limit}}{{suffix}}.")
      * 
      * @var File|null

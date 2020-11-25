@@ -16,9 +16,9 @@ class ExtraitType extends AbstractType
     {
         $builder
             ->add('morceau',VichFileType::class,[
-                'required' => false,
+                'required' => true,
                 'allow_delete' => false,
-                'download_uri' => false           
+                'download_uri' => false            
             ])
             ->add('titre')
             ->add('imageFile', VichImageType::class, [

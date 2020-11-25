@@ -15,11 +15,7 @@ class ExtraitType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('morceau',VichFileType::class,[
-                'required' => false,
-                'allow_delete' => false,
-                'download_uri' => false           
-            ])
+            ->add('morceau',VichFileType::class)
             ->add('titre')
             ->add('imageFile', VichImageType::class, [
                 'label'=> 'Image (JPG ou PNG)',
