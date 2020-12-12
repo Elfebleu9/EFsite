@@ -28,7 +28,7 @@ class Extrait
     /**
      * NOTE: This is not a mapped field of entity metadata, just a simple property.
      * 
-     * @Vich\UploadableField(mapping="extrait_morceau", fileNameProperty="son")
+     * @Vich\UploadableField(mapping="extrait_morceau", fileNameProperty="morceau")
      * 
      * @var File|null
      */
@@ -114,25 +114,25 @@ class Extrait
         return $this;
     }
 
-    /**
-     * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile|null $soundFile
-     */
-    public function setSoundFile(?File $soundFile = null): void
-    {
-        $this->soundFile = $soundFile;
+    // /**
+    //  * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile|null $soundFile
+    //  */
+    // public function setSoundFile(?File $soundFile = null): void
+    // {
+    //     $this->soundFile = $soundFile;
 
-        if (null !== $soundFile) {
-            // It is required that at least one field changes if you are using doctrine
-            // otherwise the event listeners won't be called and the file is lost
-            $this->setUpdatedAt(new \DateTimeImmutable);
-        }
-    }
+    //     if (null !== $soundFile) {
+    //         // It is required that at least one field changes if you are using doctrine
+    //         // otherwise the event listeners won't be called and the file is lost
+    //         $this->setUpdatedAt(new \DateTimeImmutable);
+    //     }
+    // }
 
-    public function getSoundFile(): ?File
-    {
-        return $this->soundFile;
-    }
-    
+    // public function getSoundFile(): ?File
+    // {
+    //     return $this->soundFile;
+    // }
+
     /**
      * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile|null $imageFile
      */

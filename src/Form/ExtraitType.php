@@ -4,11 +4,12 @@ namespace App\Form;
 
 use App\Entity\Extrait;
 use Symfony\Component\Form\AbstractType;
+use Vich\UploaderBundle\Form\Type\VichFileType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Vich\UploaderBundle\Form\Type\VichImageType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
-use Vich\UploaderBundle\Form\Type\VichFileType;
 
 class ExtraitType extends AbstractType
 {
@@ -20,7 +21,7 @@ class ExtraitType extends AbstractType
                 'allow_delete' => false,
                 'download_uri' => false           
             ])
-            ->add('titre')
+            ->add('titre', TextType::class)
             ->add('imageFile', VichImageType::class, [
                 'label'=> 'Image (JPG ou PNG)',
                 'required' => false,
