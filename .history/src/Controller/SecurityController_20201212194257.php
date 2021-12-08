@@ -15,7 +15,8 @@ class SecurityController extends AbstractController
     public function login(AuthenticationUtils $authenticationUtils): Response
     {
         if ($this->getUser()) {
-            $this->addFlash('Vous êtes déjà connecté(e).');
+            $this->addFlash('error','Vous êtes déjà connecté(e).');
+
             return $this->redirectToRoute('app_home');
         }
 
@@ -28,10 +29,11 @@ class SecurityController extends AbstractController
     }
 
     /**
-     * @Route("/logout", name="app_logout")
+     * @Route("/logout", name="app_logout", methods="POST")
      */
     public function logout()
     {
+        $this->addFlash('success','Vous êtes déconnecté(e).');
         throw new \LogicException('This method can be blank - it will be intercepted by the logout key on your firewall.');
     }
 }
